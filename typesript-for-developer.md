@@ -26,17 +26,50 @@ https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
                 npm install --save-dev typescript ts-loader source-map-loader
 
 ## package.json
-                ...
                 "scripts": {
                     "test": "echo \"Error: no test specified\" && exit 1",
                     "build":"webpack webpack.config.js"   
                 },   
-                ...
+
 # index.ts
 alert('Hello world');
 
 # index.html
 <script src="./dist/main.js"></script>
+
+# webpack.config.js
+
+                module.exports = {
+                    mode: "production",
+
+                    // Enable sourcemaps for debugging webpack's output.
+                    devtool: "source-map",
+
+                    resolve: {
+                        // Add '.ts' and '.tsx' as resolvable extensions.
+                        extensions: [".ts"]
+                    },
+
+                    module: {
+                        rules: [
+                            {
+                                test: /\.ts(x?)$/,
+                                exclude: /node_modules/,
+                                use: [
+                                    {
+                                        loader: "ts-loader"
+                                    }
+                                ]
+                            },
+                            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+                            {
+                                enforce: "pre",
+                                test: /\.js$/,
+                                loader: "source-map-loader"
+                            }
+                        ]
+                    }  
+                };
 
 # auto build on save install extentsion terminal-command-keys
 
