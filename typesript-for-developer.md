@@ -2,18 +2,18 @@ https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
 
 # Create directory and sample file
 
-proj/
-├─ dist/
-└─ src/
-|   └─ components/
-|   ├─ index.ts
-└─ index.html
-├─ webpack.config.js //auto create after run command
-├─ tsconfig.json //auto create after run command
-├─ package.json //auto create after run command
-├─ 
-├─ 
-├─ 
+                proj/
+                ├─ dist/
+                └─ src/
+                |   └─ components/
+                |   ├─ index.ts
+                └─ index.html
+                ├─ webpack.config.js //auto create after run command
+                ├─ tsconfig.json //auto create after run command
+                ├─ package.json //auto create after run command
+                ├─ 
+                ├─ 
+                ├─ 
 
 # Run cmds:
 
@@ -26,11 +26,12 @@ proj/
                 npm install --save-dev typescript ts-loader source-map-loader
 
 ## package.json
+                ...
                 "scripts": {
                     "test": "echo \"Error: no test specified\" && exit 1",
                     "build":"webpack webpack.config.js"   
                 },   
-
+                ...
 # index.ts
 alert('Hello world');
 
